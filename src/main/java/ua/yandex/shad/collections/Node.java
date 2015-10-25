@@ -19,16 +19,16 @@ public class Node {
         return this.weight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setWeight(int val) {
+        this.weight = val;
     }
 
     public String getWord() {
         return this.word;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void setWord(String str) {
+        this.word = str;
     }
 
     public Node getLeaf(int x) {

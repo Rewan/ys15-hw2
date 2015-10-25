@@ -45,10 +45,6 @@ public class RWayTrie implements Trie {
     }
 
     private void deleteNode(Node t, int pos, String word) {
-        if (t == null) {
-            return;
-        }
-
         if (pos == word.length()) {
             t.setWeight(0);
             return;
@@ -59,10 +55,6 @@ public class RWayTrie implements Trie {
     }
 
     private Iterable<String> wordsNode(Node t) {
-        if (t == null) {
-            return new ArrayList<String>();
-        }
-
         NodeQueue q = new NodeQueue();
         NodeQueue ans = new NodeQueue();
 

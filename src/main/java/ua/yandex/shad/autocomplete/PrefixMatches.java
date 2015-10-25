@@ -12,7 +12,6 @@ public class PrefixMatches {
 
     public PrefixMatches() {
         this.trie = new RWayTrie();
-        ;
     }
 
     public PrefixMatches(Trie trie) {
@@ -27,10 +26,6 @@ public class PrefixMatches {
     }
 
     public int load(String... strings) {
-        if (strings == null) {
-            return trie.size();
-        }
-
         for (String str : strings) {
             load(str);
         }
@@ -46,14 +41,15 @@ public class PrefixMatches {
         return trie.delete(word);
     }
 
-    private class WordLength implements Comparator<String> {
+    private static class WordLength implements Comparator<String> {
         public int compare(String a, String b) {
             return a.length() - b.length();
         }
     }
 
     public Iterable<String> wordsWithPrefix(String pref) {
-        return wordsWithPrefix(pref, 3);
+        int k = 3;
+        return wordsWithPrefix(pref, k);
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {

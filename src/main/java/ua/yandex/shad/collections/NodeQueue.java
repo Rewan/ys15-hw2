@@ -1,7 +1,6 @@
 package ua.yandex.shad.collections;
 
 import java.util.InputMismatchException;
-import java.lang.NullPointerException;
 
 public class NodeQueue {
 
@@ -70,9 +69,9 @@ public class NodeQueue {
         throw new NullPointerException();
     }
 
-    public Node setNode(int x, Node N) {
+    public Node setNode(int x, Node node) {
         if (x < size) {
-            this.container[x] = N;
+            this.container[x] = node;
         }
         throw new NullPointerException();
     }
