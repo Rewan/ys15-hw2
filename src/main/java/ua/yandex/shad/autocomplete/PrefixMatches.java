@@ -45,7 +45,8 @@ public class PrefixMatches {
         return trie.delete(word);
     }
 
-    private static class WordLength implements Comparator<String>,  Serializable{
+    private static class WordLength
+            implements Comparator<String>,  Serializable {
         public int compare(String a, String b) {
             return a.length() - b.length();
         }

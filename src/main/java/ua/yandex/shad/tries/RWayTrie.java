@@ -13,19 +13,19 @@ public class RWayTrie implements Trie {
     private int containsWords = 0;
 
     private void addNode(Node t, int pos, Tuple val) {
-        if (pos == val.term.length()) {
-            t.setWeight(val.weight);
-            t.setWord(val.term);
+        if (pos == val.getTerm().length()) {
+            t.setWeight(val.getWeight());
+            t.setWord(val.getTerm());
             return;
         }
 
-        int l = val.term.charAt(pos) - 'a';
+        int l = val.getTerm().charAt(pos) - 'a';
 
         Node next = t.getLeaf(l);
         if (next == null) {
             next = new Node();
             t.setLeaf(l, next);
-            t.setWord(val.term.substring(0, pos));
+            t.setWord(val.getTerm().substring(0, pos));
         }
 
         addNode(next, pos + 1, val);
@@ -85,7 +85,7 @@ public class RWayTrie implements Trie {
 
     @Override
     public void add(Tuple t) {
-        if (!contains(t.term)) {
+        if (!contains(t.getTerm())) {
             containsWords++;
             addNode(root, 0, t);
         }

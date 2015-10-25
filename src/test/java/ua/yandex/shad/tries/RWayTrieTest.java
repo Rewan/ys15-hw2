@@ -36,7 +36,7 @@ public class RWayTrieTest {
 
         testTrie.add(testTuple);
 
-        assertTrue(testTrie.contains(testTuple.term));
+        assertTrue(testTrie.contains(testTuple.getTerm()));
     }
 
     @Test
@@ -108,7 +108,7 @@ public class RWayTrieTest {
 
         testTrie.add(testTuple);
 
-        assertTrue(testTrie.delete(testTuple.term));
+        assertTrue(testTrie.delete(testTuple.getTerm()));
     }
 
     @Test
@@ -117,9 +117,9 @@ public class RWayTrieTest {
         RWayTrie testTrie = new RWayTrie();
 
         testTrie.add(testTuple);
-        testTrie.delete(testTuple.term);
+        testTrie.delete(testTuple.getTerm());
 
-        assertFalse(testTrie.contains(testTuple.term));
+        assertFalse(testTrie.contains(testTuple.getTerm()));
     }
 
     @Test
@@ -130,7 +130,7 @@ public class RWayTrieTest {
         int expResult = 0;
 
         testTrie.add(testTuple);
-        testTrie.delete(testTuple.term);
+        testTrie.delete(testTuple.getTerm());
         int actResult = testTrie.size();
 
         assertEquals(expResult, actResult);
@@ -154,7 +154,7 @@ public class RWayTrieTest {
         testTrie.add(testTuple);
         testTrie.delete("word");
 
-        assertTrue(testTrie.contains(testTuple.term));
+        assertTrue(testTrie.contains(testTuple.getTerm()));
     }
 
     @Test
