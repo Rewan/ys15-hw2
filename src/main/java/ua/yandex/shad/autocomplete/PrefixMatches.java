@@ -47,6 +47,7 @@ public class PrefixMatches {
 
     private static class WordLength
             implements Comparator<String>,  Serializable {
+        private static final long serialVersionUID = 42L;
         public int compare(String a, String b) {
             return a.length() - b.length();
         }
