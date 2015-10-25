@@ -4,7 +4,11 @@ import ua.yandex.shad.tries.RWayTrie;
 import ua.yandex.shad.tries.Tuple;
 import ua.yandex.shad.tries.Trie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.InputMismatchException;
+import java.util.Collections;
+import java.io.Serializable;
 
 public class PrefixMatches {
 
@@ -41,14 +45,14 @@ public class PrefixMatches {
         return trie.delete(word);
     }
 
-    private static class WordLength implements Comparator<String> {
+    private static class WordLength implements Comparator<String>,  Serializable{
         public int compare(String a, String b) {
             return a.length() - b.length();
         }
     }
 
     public Iterable<String> wordsWithPrefix(String pref) {
-        int k = 3;
+        int k = 1 + 1 + 1;
         return wordsWithPrefix(pref, k);
     }
 
@@ -66,7 +70,7 @@ public class PrefixMatches {
             }
 
             int d = 0;
-            ArrayList<String> cutedAns = new ArrayList<String>();
+            ArrayList<String> cuttedAns = new ArrayList<String>();
             int was = -1;
 
             for (int i = 0; i < ans.size(); i++) {
@@ -79,12 +83,12 @@ public class PrefixMatches {
                     break;
                 }
 
-                cutedAns.add(x);
+                cuttedAns.add(x);
 
                 was = x.length();
             }
 
-            return cutedAns;
+            return cuttedAns;
         }
         throw new InputMismatchException();
     }
