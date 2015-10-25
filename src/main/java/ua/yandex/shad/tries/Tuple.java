@@ -7,5 +7,5 @@ public class Tuple {
     public Tuple(String term, int weight) {
         this.term = term;
         this.weight = weight;
-    }  
+    }
 }
